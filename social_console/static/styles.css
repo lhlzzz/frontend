@@ -1,0 +1,41 @@
+:root {
+  --ink: #17211e;
+  --muted: #66716c;
+  --line: #d9dfd9;
+  --canvas: #f4f6f2;
+  --paper: #ffffff;
+  --accent: #d94b3d;
+  --good: #25714c;
+  --warn: #9c6616;
+  font-family: "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--canvas); }
+header { height: 62px; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; border-bottom: 1px solid var(--line); background: var(--paper); }
+header span { color: var(--muted); font-size: 12px; }
+.brand { font-weight: 800; }
+main { width: min(1240px, 100%); margin: 0 auto; padding: 42px 28px; }
+.intro p { margin: 0 0 8px; color: var(--accent); font-size: 12px; font-weight: 700; }
+h1 { margin: 0 0 30px; font-size: 30px; line-height: 1.25; }
+.agent-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.agent { min-height: 200px; display: flex; flex-direction: column; align-items: start; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); padding: 18px; color: inherit; text-align: left; }
+.agent:hover { border-color: var(--accent); }
+.agent .key, .agent small { color: var(--muted); font-size: 11px; }
+.agent h2 { margin: 18px 0 6px; font-size: 19px; }
+.agent p { margin: 0; color: var(--muted); font-size: 13px; }
+.agent footer { display: flex; justify-content: space-between; width: 100%; margin-top: auto; padding-top: 18px; }
+.state { color: var(--warn); font-size: 12px; font-weight: 700; }
+.state.connected { color: var(--good); }
+.state.unavailable { color: var(--accent); }
+.detail { margin-top: 26px; border-top: 1px solid var(--line); padding-top: 22px; }
+.detail-head { display: flex; justify-content: space-between; gap: 20px; }
+.metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: 18px; background: var(--line); border: 1px solid var(--line); }
+.metrics div { background: var(--paper); padding: 14px; }
+.metrics span { color: var(--muted); font-size: 12px; }
+.metrics strong { display: block; margin-top: 4px; font-size: 22px; }
+.records { margin-top: 18px; }
+.record { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); padding: 12px 0; }
+.record span { color: var(--muted); font-size: 12px; }
+.loading { color: var(--muted); }
+button { font: inherit; cursor: pointer; }
+@media (max-width: 760px) { header { padding: 0 16px; } main { padding: 28px 16px; } .agent-grid, .metrics { grid-template-columns: 1fr; } h1 { font-size: 25px; } }

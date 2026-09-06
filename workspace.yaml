@@ -1,0 +1,17 @@
+workspace:
+  id: web
+  name: web
+  version: 1.0.0
+  description: 前端控制智能体；管理独立 Financial OS（3000）和 Social Media OS（4000）
+
+constitution:
+  version: 1
+
+runtime:
+  controller
+
+database:
+  none
+
+verification:
+  enabled: true

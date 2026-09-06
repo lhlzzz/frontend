@@ -1,0 +1,16 @@
+[project]
+name = "hermes-social-media-console"
+version = "0.1.0"
+description = "Unified browser observation console for social media agents"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.138,<1",
+  "uvicorn>=0.46,<1",
+]
+
+[tool.fastapi]
+entrypoint = "social_console.main:app"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

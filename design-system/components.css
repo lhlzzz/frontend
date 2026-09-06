@@ -1,0 +1,114 @@
+/* Hermes Design System — Shared Components
+   引用方式：<link rel="stylesheet" href="/design/components.css">
+   需要先引入 tokens.css + base.css。
+*/
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: var(--sidebar-width); min-height: 100vh; position: fixed; left: 0; top: 0; z-index: 50;
+  background: var(--bg-sidebar); border-right: 1px solid var(--border);
+  padding: var(--space-xl) var(--space-md); display: flex; flex-direction: column;
+}
+.sidebar-brand { display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-xs) var(--space-sm); margin-bottom: var(--space-xl); }
+.sidebar-brand span.emoji { font-size: 20px; }
+.sidebar-brand span.label { font-size: 13px; font-weight: 600; color: var(--text-3); }
+.sidebar-identity { display: flex; align-items: center; gap: 10px; padding: 0 var(--space-sm); margin-bottom: var(--space-2xl); }
+.sidebar-avatar {
+  width: 44px; height: 44px; border-radius: 50%; font-size: 22px;
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--purple-light) 100%);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.sidebar-name { font-size: 17px; font-weight: 800; }
+.sidebar-sub { font-size: 11px; color: var(--text-3); }
+.sidebar nav { flex: 1; display: flex; flex-direction: column; gap: var(--space-xs); }
+.sidebar-footer { margin-top: auto; padding: var(--space-sm); text-align: center; font-size: 11px; color: var(--text-3); }
+
+/* ===== Nav Items ===== */
+.nav-item {
+  display: flex; align-items: center; gap: var(--space-md); padding: 10px var(--space-md);
+  border-radius: var(--radius-md); border: none; background: transparent;
+  cursor: pointer; width: 100%; text-align: left; font-size: 14px;
+  color: var(--text-2); transition: all 0.15s;
+}
+.nav-item:hover { background: rgba(255, 214, 231, 0.4); }
+.nav-item.active { background: rgba(255, 214, 231, 0.8); font-weight: 600; color: var(--primary-dark); }
+.nav-item .icon { font-size: 18px; width: 24px; text-align: center; }
+.nav-item .badge {
+  margin-left: auto; background: var(--primary); color: #fff; font-size: 11px;
+  padding: 2px var(--space-sm); border-radius: var(--radius-full); font-weight: 600;
+}
+
+/* ===== Header ===== */
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+.header h1 { font-size: 26px; font-weight: 800; }
+.header p { font-size: 14px; color: var(--text-2); margin-top: var(--space-xs); }
+.header-right { display: flex; gap: var(--space-md); align-items: center; }
+
+/* ===== Cards ===== */
+.card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm); transition: all 0.25s; animation: fade-in 0.4s ease-out;
+}
+.card:hover { box-shadow: var(--shadow-md); }
+.card-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-lg) var(--space-xl); border-bottom: 1px solid var(--border);
+}
+.card-head h2 { font-size: 15px; font-weight: 700; }
+.card-head .sub { font-size: 12px; color: var(--text-3); }
+.card-body { padding: var(--space-xl); }
+
+/* ===== Stat Grid ===== */
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); margin-bottom: var(--space-2xl); }
+.stat-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: var(--space-xl); box-shadow: var(--shadow-sm); transition: all 0.25s;
+}
+.stat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.stat-card .label { font-size: 12px; color: var(--text-3); font-weight: 500; }
+.stat-card .value { font-size: 24px; font-weight: 800; margin-top: 6px; font-family: var(--font-mono); }
+.stat-card .change { font-size: 12px; margin-top: 6px; font-weight: 600; }
+
+/* ===== Table ===== */
+.table { width: 100%; border-collapse: collapse; }
+.table th { text-align: left; font-size: 12px; color: var(--text-3); font-weight: 600; padding: var(--space-sm) var(--space-md); border-bottom: 1px solid var(--border); }
+.table td { padding: var(--space-md); border-bottom: 1px solid var(--border); font-size: 14px; }
+.table tr:hover { background: rgba(255, 214, 231, 0.15); }
+
+/* ===== Search Box ===== */
+.search-box {
+  display: flex; align-items: center; gap: var(--space-sm); padding: 10px var(--space-md);
+  border-radius: var(--radius-md); border: 1.5px solid var(--border);
+  background: var(--bg-card); width: 280px;
+}
+.search-box input { border: none; outline: none; background: transparent; font-size: 14px; color: var(--text); width: 100%; }
+.search-box .icon { opacity: 0.4; }
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex; align-items: center; gap: var(--space-sm);
+  padding: 10px var(--space-xl); border-radius: var(--radius-md);
+  border: none; font-size: 14px; font-weight: 600; cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-ghost { background: transparent; color: var(--text-2); border: 1px solid var(--border); }
+.btn-ghost:hover { background: rgba(255, 214, 231, 0.3); }
+
+/* ===== Badge ===== */
+.badge {
+  display: inline-block; padding: 2px var(--space-sm); border-radius: var(--radius-full);
+  font-size: 11px; font-weight: 600;
+}
+.badge-green { background: rgba(168, 230, 207, 0.3); color: var(--green-dark); }
+.badge-red { background: rgba(255, 179, 179, 0.3); color: var(--red-dark); }
+.badge-purple { background: rgba(200, 167, 255, 0.3); color: var(--purple); }
+.badge-primary { background: rgba(255, 143, 184, 0.15); color: var(--primary-dark); }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .sidebar { display: none; }
+  .main { margin-left: 0; padding: var(--space-lg); }
+}
